@@ -1,131 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerador de Box Shadow</title>
-    <link rel="stylesheet" href="./src/css/estilos.css" />
-    <script src="./src/js/index.js" defer></script>
-  </head>
-  <body>
-    <div id="box-shadow-generator">
-      <div id="controls-container">
-        <h2>Configurações da Box Shadow:</h2>
-        <div class="form-control">
-          <div class="range-input">
-            <label for="horizontal">Deslocamento horizontal:</label>
-            <input
-              type="range"
-              id="horizontal"
-              name="horizontal"
-              min="-100"
-              max="100"
-              value="5"
-            />
-          </div>
-          <div class="reference-input">
-            <input type="text" id="horizontal-value" name="horizontal-value" />
-            <p>px</p>
-          </div>
-        </div>
-        <div class="form-control">
-          <div class="range-input">
-            <label for="vertical">Deslocamento vertical:</label>
-            <input
-              type="range"
-              id="vertical"
-              name="vertical"
-              min="-100"
-              max="100"
-              value="5"
-            />
-          </div>
-          <div class="reference-input">
-            <input type="text" id="vertical-value" name="vertical-value" />
-            <p>px</p>
-          </div>
-        </div>
-        <div class="form-control">
-          <div class="range-input">
-            <label for="blur">Intensidade do borrão (Blur):</label>
-            <input
-              type="range"
-              id="blur"
-              name="blur"
-              min="0"
-              max="100"
-              value="10"
-            />
-          </div>
-          <div class="reference-input">
-            <input type="text" id="blur-value" name="blur-value" />
-            <p>px</p>
-          </div>
-        </div>
-        <div class="form-control">
-          <div class="range-input">
-            <label for="spread">Intensidade do espalhamento (Spread):</label>
-            <input
-              type="range"
-              id="spread"
-              name="spread"
-              min="-100"
-              max="100"
-              value="3"
-            />
-          </div>
-          <div class="reference-input">
-            <input type="text" id="spread-value" name="spread-value" />
-            <p>px</p>
-          </div>
-        </div>
-        <div class="form-control">
-          <div class="range-input">
-            <label for="color">Cor da sombra:</label>
-            <input type="color" id="color" name="color" value="#000000" />
-          </div>
-          <div class="reference-input">
-            <input type="text" id="color-value" name="color-value" />
-          </div>
-        </div>
-        <div class="form-control">
-          <div class="range-input">
-            <label for="opacity">Opacidade:</label>
-            <input
-              type="range"
-              id="opacity"
-              name="opacity"
-              min="0"
-              max="1"
-              value="1"
-              step="0.01"
-            />
-          </div>
-          <div class="reference-input">
-            <input type="text" id="opacity-value" name="opacity-value" />
-          </div>
-        </div>
-        <div class="form-control">
-          <div class="range-input">
-            <label for="opacity">Sombra interna? (Inset)</label>
-            <input type="checkbox" id="inset" name="inset" />
-          </div>
-        </div>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#e8e6df" />
+  <title>SHADOW WORKBENCH — CSS Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/css/estilos.css" />
+  <script src="./src/js/index.js" defer></script>
+</head>
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="logo" href="#" aria-label="Shadow Workbench início"><span class="logo-mark"><i></i><i></i><i></i><i></i></span><span>SHADOW<span class="logo-light">WORKBENCH</span></span></a>
+      <div class="top-meta"><span class="live-dot"></span> CSS EXPERIMENT / TOOL 003</div>
+      <div class="top-version">INTERFACE LAB <b>—</b> 02.6</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span>VISUAL DEVELOPMENT TOOL</span><span class="divider"></span><span>BOX MODEL / 01</span></p>
+        <h1>Shape the <em>shadow.</em></h1>
+        <p>Construa sombras CSS com precisão. Ajuste os parâmetros, observe o resultado e copie o código pronto para usar.</p>
       </div>
-      <div id="preview">
-        <h2>Preview do efeito gerado:</h2>
-        <div id="box"></div>
+      <div class="hero-stamp"><span>CSS</span><strong>LAB</strong><small>EST. 2026</small></div>
+    </section>
+
+    <section class="workbench">
+      <aside id="controls-container" class="control-board">
+        <div class="board-header"><div><span class="section-index">01 / CONTROLS</span><h2>Shadow settings</h2></div><span class="board-code">PANEL A—04</span></div>
+
+        <div class="control-group">
+          <div class="control-top"><label for="horizontal">Horizontal offset</label><div class="value-pair"><input type="number" id="horizontal-value" name="horizontal-value" value="5" step="1" /><span>PX</span></div></div>
+          <input type="range" id="horizontal" name="horizontal" min="-100" max="100" value="5" />
+          <div class="range-labels"><span>−100</span><span>0</span><span>+100</span></div>
+        </div>
+        <div class="control-group">
+          <div class="control-top"><label for="vertical">Vertical offset</label><div class="value-pair"><input type="number" id="vertical-value" name="vertical-value" value="5" step="1" /><span>PX</span></div></div>
+          <input type="range" id="vertical" name="vertical" min="-100" max="100" value="5" />
+          <div class="range-labels"><span>−100</span><span>0</span><span>+100</span></div>
+        </div>
+        <div class="control-group">
+          <div class="control-top"><label for="blur">Blur radius</label><div class="value-pair"><input type="number" id="blur-value" name="blur-value" value="10" min="0" max="100" /><span>PX</span></div></div>
+          <input type="range" id="blur" name="blur" min="0" max="100" value="10" />
+          <div class="range-labels"><span>0</span><span>50</span><span>100</span></div>
+        </div>
+        <div class="control-group">
+          <div class="control-top"><label for="spread">Spread radius</label><div class="value-pair"><input type="number" id="spread-value" name="spread-value" value="3" min="-100" max="100" /><span>PX</span></div></div>
+          <input type="range" id="spread" name="spread" min="-100" max="100" value="3" />
+          <div class="range-labels"><span>−100</span><span>0</span><span>+100</span></div>
+        </div>
+
+        <div class="color-opacity">
+          <div class="color-control"><label for="color">Shadow color</label><div class="color-row"><input type="color" id="color" name="color" value="#000000" /><input type="text" id="color-value" name="color-value" value="#000000" maxlength="7" /></div></div>
+          <div class="opacity-control"><div class="control-top"><label for="opacity">Opacity</label><div class="value-pair"><input type="number" id="opacity-value" name="opacity-value" value="1" min="0" max="1" step="0.01" /></div></div><input type="range" id="opacity" name="opacity" min="0" max="1" value="1" step="0.01" /></div>
+        </div>
+
+        <label class="inset-option" for="inset"><span><strong>Inner shadow</strong><small>Apply the shadow inside the element</small></span><input type="checkbox" id="inset" name="inset" /><span class="toggle"></span></label>
+        <div class="board-footer"><span>LIVE UPDATE <i></i></span><span>ALL VALUES IN PX</span></div>
+      </aside>
+
+      <section id="preview" class="preview-board">
+        <div class="preview-header"><div><span class="section-index">02 / LIVE PREVIEW</span><h2>Canvas</h2></div><span class="preview-state"><i></i> RENDERING</span></div>
+        <div class="canvas">
+          <div class="canvas-grid" aria-hidden="true"></div>
+          <div class="canvas-cross cross-a"></div><div class="canvas-cross cross-b"></div>
+          <div id="box" aria-label="Prévia do efeito box-shadow"></div>
+          <span class="canvas-coordinate coordinate-a">X: 000 / Y: 000</span>
+          <span class="canvas-coordinate coordinate-b">VIEWPORT / 01</span>
+        </div>
+        <div class="preview-bottom"><div><span class="mini-label">OBJECT</span><strong>RECTANGLE / 01</strong></div><div><span class="mini-label">BACKGROUND</span><strong>NEUTRAL GRID</strong></div><div><span class="mini-label">STATUS</span><strong class="render-ready">● LIVE</strong></div></div>
+        <div class="presets"><span class="mini-label">QUICK PRESETS</span><button type="button" data-preset="soft">SOFT</button><button type="button" data-preset="float">FLOAT</button><button type="button" data-preset="hard">HARD</button><button type="button" data-preset="inset">INSET</button></div>
+      </section>
+    </section>
+
+    <section id="generated-rule" class="code-board">
+      <div class="code-heading"><div><span class="section-index">03 / GENERATED CSS</span><h2>Ready to implement</h2></div><span class="code-language">CSS <b>●</b> VALID</span></div>
+      <div id="rules-area" role="button" tabindex="0" aria-label="Copiar todas as regras CSS">
+        <div class="code-line"><span class="line-number">01</span><code><span class="code-selector">.element</span> {</code></div>
+        <div class="code-line"><span class="line-number">02</span><code class="property">  box-shadow: <span id="rule"></span></code></div>
+        <div class="code-line"><span class="line-number">03</span><code class="property muted-property">  -webkit-box-shadow: <span id="webkit-rule"></span></code></div>
+        <div class="code-line"><span class="line-number">04</span><code class="property muted-property">  -moz-box-shadow: <span id="moz-rule"></span></code></div>
+        <div class="code-line"><span class="line-number">05</span><code>}</code></div>
+        <button type="button" class="copy-code" id="copy-code"><span>▣</span> COPY CSS</button>
       </div>
-    </div>
-    <div id="generated-rule">
-      <h2>Copie e cole no seu arquivo de CSS:</h2>
-      <div id="rules-area">
-        <p id="rule">box-shadow: <span></span></p>
-        <p id="webkit-rule">-webkit-box-shadow: <span></span></p>
-        <p id="moz-rule">-moz-box-shadow: <span></span></p>
-      </div>
-      <p id="copy-instructions">Clique no quadro acima para copiar as regras</p>
-    </div>
-  </body>
+      <p id="copy-instructions" role="status">Clique no bloco ou use COPY CSS para copiar as declarações.</p>
+    </section>
+
+    <footer class="footer"><span>SHADOW WORKBENCH <b>—</b> VISUAL CSS LAB</span><span>DESIGNED TO EXPERIMENT <b>●</b> BUILT TO SHIP</span><span>© 2026</span></footer>
+  </main>
+</body>
 </html>
